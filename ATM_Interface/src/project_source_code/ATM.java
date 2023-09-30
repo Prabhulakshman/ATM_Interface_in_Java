@@ -1,18 +1,28 @@
 package project_source_code;
 import java.util.Scanner;
+//Concrete Class ATM holds various methods() for each use case
 public class ATM {
 public static void main(String []args)
 {
-	
+	//Scanner is used to Get User Input
+	//Scanner Object Creation
 	Scanner s=new Scanner(System.in);
+	//Displays Greeting Message to the User
 	System.out.println("Welcome to our ATM Service");
+	//Asks User to Enter ATM Number
 	System.out.println("Enter ATM Number: ");
 	long atm_no=s.nextLong();
+	//Creating a New Object for Each new User to a Dedicated Account_Holder Interface
+	//Up casting is done by storing Sub Class Object into Super Class Reference Variable
 	Account_Holder acc=new User();
+	//Asks User to Enter Pin code
 	System.out.println("Enter Pincode: ");
 	int pin=s.nextInt();
+	//Storing Validating Entered ATM Details
 	acc.getatm_details(atm_no,pin);
+	//Object Creation for Bank_Transaction Class to access its methods()
 	Bank_Transaction b=new Bank_Transaction();
+	//Up casting is done by storing Sub Class Bank Object into Super Class Account Reference Variable
 	Account a=new Bank();
 	boolean res=acc.check(atm_no, pin);
 	if(res)
@@ -73,7 +83,7 @@ public static void main(String []args)
 		}
 		break;
 	}
-	
+	//Closing Scanner Class Object is not Mandatory but is a Good Practice
 	s.close();
 	
 	}

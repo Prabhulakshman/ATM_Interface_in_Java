@@ -1,9 +1,10 @@
 package project_source_code;
-
+//Concrete Sub Class or Implementation Class Bank
 public class Bank implements Account{
-	 static double minimum_balance=5000;
-	 static double total_balance=50000;
-	
+	 static double threshold=5000;
+	 static double minimum_balance=threshold;
+	 static double total_balance=minimum_balance;
+	@Override
 	public  void withdraw(double amount)
 	{
 		if(amount<=total_balance && amount>minimum_balance)
@@ -17,6 +18,7 @@ public class Bank implements Account{
 			System.out.println("We cannot process Withdrawal Process due to In-Sufficient Balance,Total Available Balance is "+total_balance);
 		}
 	}
+	@Override
 	public  void deposit(double amount)
 	{
 		if(amount >0)
@@ -26,6 +28,7 @@ public class Bank implements Account{
 			Bank_Transaction.count_transaction++;
 		}
 	}
+	@Override
 	public  void transaction(double amount,String ifsc,String acc_no)
 	{
 		
