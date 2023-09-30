@@ -4,6 +4,7 @@ public class Bank implements Account{
 	 static double threshold=5000;
 	 static double minimum_balance=threshold;
 	 static double total_balance=minimum_balance;
+	//Implementation of all Abstract Methods() 
 	@Override
 	public  void withdraw(double amount)
 	{
